@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.5.0",
+    "apexcharts": "^3.36.0",
+    "ethers": "^5.7.2",
+    "solid-apexcharts": "^0.1.6",
     "solid-js": "^1.6.0"
   }
 }

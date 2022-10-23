@@ -24,7 +24,7 @@ const LRC: Component = () => {
         return setError("Deposited Amount isn't a number");
       }
 
-      if (isNaN(depositedAmount())) {
+      if (isNaN(borrowedAmount())) {
         return setError("Borrowed Amount isn't a number");
       }
 
@@ -82,10 +82,22 @@ const LRC: Component = () => {
             </div>
           </Show>
           <Show when={error().length <= 0}>
-            <p>
-              A loan of {borrowedAmount()}$ takes {daysToRepay()} DAYS to be
-              self-repayed.
-            </p>
+            <table class="border-separate border-spacing-2 rounded-lg border-gray-900">
+              <tbody>
+                <tr class="border-b shadow-highlight">
+                  <td class="">Self-Repayment in Days:</td>
+                  <td class="">{daysToRepay()} Days</td>
+                </tr>
+                <tr class="border-b shadow-highlight">
+                  <td class="">Self-Repayment in Months:</td>
+                  <td class="">{daysToRepay() / 30} Months</td>
+                </tr>
+                <tr class="border-b shadow-highlight">
+                  <td class="">Self-Repayment in Years:</td>
+                  <td class="">{daysToRepay() / 366} Years</td>
+                </tr>
+              </tbody>
+            </table>
           </Show>
         </div>
       </div>
